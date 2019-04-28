@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>豪哥练算术</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<style type="text/css">
+			body{background: white;}
+			h1,h2,p,h3,div{text-align: center;}
+			h3{height:30px;color:red;}
+			#fuhao{width: 30px;display: inline-block;}
+			input{height: 38px;width: 66px;text-align: center;font-size: larger;}
+			button{font-size: 1.5rem;border-radius: 6px;}
+		</style>
+	</head>
+	<body>
+		<h2>幼儿园大班算术练习册</h2>
+		<hr>
+		<h1>
+			<span id="n1">n1</span>
+			<span id="fuhao">+</span>
+			<span id="n2">n2</span>
+			<span>=</span>
+			<input id="res">
+		</h1>
+		
+		<h3 id="tip"></h3>
+		
+		
+		<p><button onclick="see_ans()">看一下答案</button></p>
+		<p><button onclick="window.location.reload()">再做一道题</button></p>
+		
+		<div id="cartoon">
+			<img src="6.gif" width="80%">
+			<img src="7.gif" width="100">
+		</div>
+		
+		
+		<script type="text/javascript">
+			var n1=document.getElementById("n1");
+			var fuhao=document.getElementById("fuhao");
+			var n2=document.getElementById("n2");
+			var res=document.getElementById("res");
+			
+			var a = Math.random().toFixed(1)*100;
+			var b = (parseInt(Math.random()*10))*10;
+			var c = 0;
+			var ans = 0;
+			
+			while (a==0 || b==0 || a==b) {
+				a = Math.random().toFixed(1)*100;
+				b = (parseInt(Math.random()*10))*10;
+			} 
+			
+			if (a>b) {
+				c=a-b;
+				show(c,'+',b,a);
+			} else{
+				c=b-a;
+				show(b,'-',a,c);
+			}
+			
+			
+			
+			function show(c,czf,b,a){
+				n1.innerText=c;
+				fuhao.innerText=czf;
+				n2.innerText=b;
+				ans=a;
+			}
+			
+			function see_ans(){
+				if(res.value==ans){
+					success();
+					res.value=ans;
+				}else{
+					error();
+				}
+			}
+			
+			function success(){
+				res.style.background="green";
+				res.style.color="white";
+				document.getElementById("tip").innerText="答对了，真棒！";
+			}
+			
+			function error(){
+				res.style.background="orangered";
+				document.getElementById("tip").innerText="算错了，答案："+ans;
+			}
+			
+		</script>
+	</body>
+</html>
