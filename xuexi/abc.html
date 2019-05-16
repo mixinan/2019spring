@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4&&xhr.status==200){
+                var result=xhr.responseText;
+                console.log(result);
+            }
+        }
+        xhr.open("get","http://127.0.0.1:8080/work/ajax",true);
+        xhr.send(null);
+    </script>
+</body>
+</html>

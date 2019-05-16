@@ -11,6 +11,7 @@ server.listen(8080);
 server.use( bodyParser.urlencoded({extended:false}) );
 
 server.use( express.static("public") );
+server.use( express.static("xuexi") );
 
 server.use('/work',workRouter);
 server.use('/family',familyRouter);

@@ -16,5 +16,10 @@ router.get('/ip',function(req,res){
 	res.send("ip列表的网页");
 });
 
+//ajax
+router.get('/ajax',function(req,res){
+	res.send("ajax的网页");
+});
+
 //导出路由器对象
 module.exports=router;
