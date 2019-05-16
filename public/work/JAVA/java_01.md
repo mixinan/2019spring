@@ -1,8 +1,7 @@
-# 3天Java复习
+# Java复习 - base
 
-## day01
 
-### 开发环境  
+## 开发环境  
 
 - JDK 开发工具包  
 - JRE 运行环境  
@@ -12,7 +11,7 @@ xx.java（源程序）
 javac（编译器）  
 xx.class（字节码文件）
 
-### 环境变量
+## 环境变量
 ```shell
 cat /etc/profile  
 export JAVA_HOME=/opt/jdk  
@@ -20,7 +19,7 @@ export CLASSPATH=.
 export PATH=/opt/jdk/bin:$PATH
 ```
 
-### 数据类型
+## 数据类型
 
 基本数据类型（8种）：  
 整数 byte short int long  
@@ -60,7 +59,7 @@ int a,b,c;
 a = b = c = 100;
 ```
 
-### 数组
+## 数组
 
 初始化  
 ```java
